@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Jiayi - Academic Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+            extend: {
+                colors: {
+                    primary: '#1E40AF',
+                    secondary: '#3B82F6',
+                    accent: '#0EA5E9',
+                    dark: '#1E293B',
+                },
+                fontFamily: {
+                    inter: ['Inter', 'serif'],
+                },
+            }
+        }
+    }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    </style>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .publication-item:hover {
+            background: linear-gradient(90deg, rgba(30, 64, 175, 0.05) 0%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter text-gray-800">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-3">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-xl font-bold tracking-tight text-primary">
+                    Academic Portfolio
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="#home" class="text-sm font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+                    <a href="#research" class="text-sm font-medium hover:text-primary transition-colors">Research</a>
+                    <a href="#publications" class="text-sm font-medium hover:text-primary transition-colors">Publications</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-primary transition-colors">Skills</a>
+                    <a href="#contact" class="px-5 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-medium transition-all">
+                        Contact
+                    </a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-gray-700">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm mt-2 py-3 px-6 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="text-sm font-medium hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+                <a href="#research" class="text-sm font-medium hover:text-primary transition-colors">Research</a>
+                <a href="#publications" class="text-sm font-medium hover:text-primary transition-colors">Publications</a>
+                <a href="#skills" class="text-sm font-medium hover:text-primary transition-colors">Skills</a>
+                <a href="#contact" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16">
+        <div class="max-w-5xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-5 gap-10 items-center">
+                <div class="md:col-span-3 fade-up">
+                    <div class="inline-flex items-center px-4 py-2 bg-blue-50 text-primary text-sm rounded-lg mb-6">
+                        <i class="fa fa-graduation-cap mr-2"></i>
+                        Research Assistant Candidate
+                    </div>
+                    <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                        Hello, I'm <span class="text-primary">Sun Jiayi</span>
+                    </h1>
+                    <h2 class="text-xl text-gray-600 mb-6 font-medium">
+                        Master Student • Research Enthusiast
+                    </h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed max-w-xl">
+                        A passionate student researcher with interests in environmental governance, regional economics, and data science. 
+                        Seeking Research Assistant position to contribute to cutting-edge academic research.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#research" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-all">
+                            <i class="fa fa-flask mr-2"></i> View Research
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:border-primary hover:text-primary transition-all">
+                            <i class="fa fa-envelope mr-2"></i> Contact Me
+                        </a>
+                        <a href="CV%20.pdf" download class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-all">
+                            <i class="fa fa-file-pdf-o mr-2"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <a href="https://scholar.google.com" target="_blank" class="text-gray-500 hover:text-primary transition-colors" title="Google Scholar">
+                            <i class="fa fa-graduation-cap text-xl"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="text-gray-500 hover:text-primary transition-colors" title="GitHub">
+                            <i class="fa fa-github text-xl"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="text-gray-500 hover:text-primary transition-colors" title="LinkedIn">
+                            <i class="fa fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://orcid.org" target="_blank" class="text-gray-500 hover:text-primary transition-colors" title="ORCID">
+                            <i class="fa fa-id-card-o text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-2 flex justify-center fade-up">
+                    <div class="relative">
+                        <div class="w-56 h-56 lg:w-64 lg:h-64 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                            <img src="4.Photograph_Sun%20Jiayi.JPG" alt="Profile" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 bg-white px-4 py-2 rounded-lg shadow-lg">
+                            <div class="text-xs text-gray-500">GPA</div>
+                            <div class="text-lg font-bold text-primary">90/100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Education -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-3xl font-bold">Education & Background</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="fade-up">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <i class="fa fa-university text-primary"></i> Education
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-primary pl-5 py-2">
+                            <span class="text-sm text-primary font-semibold">2023.9 - 2026.6</span>
+                            <h4 class="text-lg font-bold mt-1">M.S. in International Business</h4>
+                            <p class="text-gray-600">Ludong University, China</p>
+                            <p class="text-sm text-gray-500 mt-1">GPA: 4.03/5.0 • Rank: 1/14 • Advisor: Assoc. Prof. Zhang Xiaohui</p>
+                            <p class="text-sm text-gray-600 mt-2">Relevant Coursework: Business English, Economic Analysis and Application, International Trade Policies and Practices</p>
+                        </div>
+                        <div class="border-l-4 border-blue-300 pl-5 py-2">
+                            <span class="text-sm text-secondary font-semibold">2017.9 - 2021.6</span>
+                            <h4 class="text-lg font-bold mt-1">B.S. in Financial Engineering</h4>
+                            <p class="text-gray-600">Shandong University of Finance and Economics, China</p>
+                            <p class="text-sm text-gray-500 mt-1">GPA: 90.92/100</p>
+                            <p class="text-sm text-gray-600 mt-2">Relevant Coursework: Statistics (97/100), C++ Programming, Matlab Programming, Econometrics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <i class="fa fa-star text-primary"></i> Research Interests
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 bg-primary rounded-full"></span>
+                                Environmental Governance
+                            </h4>
+                            <p class="text-sm text-gray-600">Carbon emissions, forest protection, environmental policy analysis</p>
+                        </div>
+                        <div class="bg-gray-50 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 bg-secondary rounded-full"></span>
+                                Regional Economic Development
+                            </h4>
+                            <p class="text-sm text-gray-600">Asian development studies, digital economy, international trade</p>
+                        </div>
+                        <div class="bg-gray-50 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 bg-accent rounded-full"></span>
+                                Computational Social Science
+                            </h4>
+                            <p class="text-sm text-gray-600">Applying ML and econometric methods to social science problems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Experience -->
+    <section id="research" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-3xl font-bold">Research Experience</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
+            </div>
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-up">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Research Assistant</h3>
+                            <p class="text-primary font-medium">Environmental Development Case Studies</p>
+                        </div>
+                        <span class="bg-blue-100 text-primary px-3 py-1 rounded text-sm font-medium">Feb 2024 – Nov 2025</span>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Conducted in-depth research on environmental policies including the EU Deforestation Regulation (EUDR) and Carbon Border Adjustment Mechanism (CBAM)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Investigated corporate response strategies to environmental regulations, efficiently processing data on raw material costs, market trends, and related materials</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Co-authored 2 case studies submitted to the China Case Center, with 1 successfully accepted into the database</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-5">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Policy Analysis</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">EUDR</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">CBAM</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Case Writing</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-up">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Master's Thesis (Independent Research)</h3>
+                            <p class="text-primary font-medium">Carbon Emission Efficiency & Green Credit Research</p>
+                        </div>
+                        <span class="bg-blue-100 text-primary px-3 py-1 rounded text-sm font-medium">Mar 2025 – Mar 2026</span>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Investigated export trade embodied carbon emission efficiency across 30 Chinese provinces and examined the impact of green credit on carbon emission efficiency</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Performed data integration and computation on China's multi-regional input-output tables and carbon emission data using Python</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Calculated carbon emission efficiency using R</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-5">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Python</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">R</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">MRIO Tables</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Green Finance</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-up">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Financing Project Leader</h3>
+                            <p class="text-primary font-medium">Financing Model for Offshore Wind Power Export | MIB Trade Finance Competition</p>
+                        </div>
+                        <span class="bg-blue-100 text-primary px-3 py-1 rounded text-sm font-medium">Apr 2025 – Jul 2025</span>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Led the financing design for offshore wind power equipment exports, structuring repayment/guarantee frameworks and risk analysis</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Drafted the full English financing proposal and defended it before judges, addressing cross-border financing challenges under the dual-carbon strategy</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-5">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Trade Finance</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Risk Analysis</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Proposal Writing</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">English Presentation</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-up">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Undergraduate Thesis</h3>
+                            <p class="text-primary font-medium">Credit Risk Modeling Using KMV Framework</p>
+                        </div>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded text-sm font-medium">Jan 2021 – Jun 2021</span>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa fa-trophy text-yellow-500"></i>
+                        <span class="text-sm font-medium text-yellow-600">Recognised as an Outstanding Thesis</span>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Built a credit risk model in R based on the KMV framework to estimate bond default probabilities</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-green-500 mt-1"></i>
+                            <span>Applied VAR models to analyse relationships between default risk and macroeconomic indicators</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-5">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">R</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">KMV Model</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">VAR</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Credit Risk</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs">Outstanding Thesis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-3xl font-bold">Publications & Manuscripts</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
+            </div>
+            <div class="space-y-4">
+                <div class="publication-item p-6 rounded-xl border-l-4 border-primary transition-all fade-up">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <h4 class="font-bold text-lg">Company K's Sustainable Strategic Response to the EUDR Act</h4>
+                            <p class="text-gray-600 mt-1">Qi Hailan, Wang Lifen, Zhang Xiaohui, <strong>Sun Jiayi</strong></p>
+                            <p class="text-primary text-sm mt-1"><em>China Professional Degree Case Centre</em>, Accepted. 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item p-6 rounded-xl border-l-4 border-secondary transition-all fade-up">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <h4 class="font-bold text-lg">Research and Policy Recommendations on the Level of Digital Economy and Trade Exports in Shandong Province</h4>
+                            <p class="text-gray-600 mt-1"><strong>Sun Jiayi</strong>, Liu Yaxin, Li Junjian</p>
+                            <p class="text-secondary text-sm mt-1"><em>Journal of Applied Economics and Policy Studies</em>, Accepted. 2025</p>
+                            <p class="text-accent text-sm mt-1">
+                                <i class="fa fa-microphone mr-1"></i>
+                                Presented at the International Symposium on High-Quality Economic Development between China and the Republic of Korea under the APEC Framework, 2025
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item p-6 rounded-xl border-l-4 border-gray-300 transition-all fade-up">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <h4 class="font-bold text-lg">Analysis of Interest Rate Parity Deviation and Influencing Factors under the '8.11' Exchange Reform Policy -- Based on Interest Rate Parity Theory</h4>
+                            <p class="text-gray-600 mt-1"><strong>Sun Jiayi</strong>, Liu Yaxin, Li Junjian</p>
+                            <p class="text-gray-500 text-sm mt-1"><em>Manuscript in Preparation</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-3xl font-bold">Technical Skills</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm fade-up">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fa fa-bar-chart text-primary"></i> Econometrics & Stats
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Stata</span>
+                            <div class="flex gap-1">
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">EViews</span>
+                            <div class="flex gap-1">
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-gray-300 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">MATLAB</span>
+                            <div class="flex gap-1">
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-primary text-xs"></i>
+                                <i class="fa fa-circle text-gray-300 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm fade-up">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fa fa-code text-secondary"></i> Programming
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-2 bg-blue-50 text-primary rounded text-xs font-medium">Python</span>
+                        <span class="px-3 py-2 bg-blue-50 text-primary rounded text-xs font-medium">R</span>
+                        <span class="px-3 py-2 bg-blue-50 text-primary rounded text-xs font-medium">C++ (Basic)</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm fade-up">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fa fa-language text-accent"></i> Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-2 bg-teal-50 text-teal-700 rounded text-xs font-medium">English (IELTS 6.5)</span>
+                        <span class="px-3 py-2 bg-teal-50 text-teal-700 rounded text-xs font-medium">Chinese (Native)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white p-8 rounded-xl shadow-sm fade-up">
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2">
+                    <i class="fa fa-trophy text-yellow-500"></i> Honors & Awards
+                </h3>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-primary mb-3 flex items-center gap-2">
+                            <i class="fa fa-star text-yellow-500"></i> National Level
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-3 pl-6">
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></div>
+                                <span>Third Prize in National College Students' English Competition, 2019</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></div>
+                                <span>National Third Prize in International Trade Competition of National University Business Elite Challenge (RCEP), 2024</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></div>
+                                <span>National Second Prize, Individual Excellence Award in International Trade Finance Competition for MIB, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                            <i class="fa fa-map-marker text-blue-500"></i> Provincial Level
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-3 pl-6">
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 shrink-0"></div>
+                                <span>Third Prize of Shandong Province in National College Business Elite Challenge, 2023</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 shrink-0"></div>
+                                <span>Excellent Award of Shandong Province in "ICBC Cup" Financial Science and Technology Innovation Competition, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-3 flex items-center gap-2">
+                            <i class="fa fa-graduation-cap text-gray-500"></i> University Level
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-3 pl-6">
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 shrink-0"></div>
+                                <span>First-class Scholarship of Shandong University of Finance and Economics (twice), 2018</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 shrink-0"></div>
+                                <span>Second-class Scholarship of Shandong University of Finance and Economics (twice), 2019, 2020</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 shrink-0"></div>
+                                <span>Luxin Scholarship (Only 35 students awarded school-wide), 2019</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 shrink-0"></div>
+                                <span>Third-class Scholarship of Ludong University (three times), 2023, 2024, 2025</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 shrink-0"></div>
+                                <span>Outstanding Graduate Student, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-3xl font-bold">Get In Touch</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-600 mt-4 max-w-lg mx-auto">
+                    I'm actively seeking Research Assistant opportunities. Please feel free to reach out!
+                </p>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="grid sm:grid-cols-3 gap-4 mb-8 fade-up">
+                    <div class="text-center p-5 bg-gray-50 rounded-xl">
+                        <i class="fa fa-envelope text-primary text-2xl mb-2"></i>
+                        <p class="font-medium">Email</p>
+                        <p class="text-sm text-gray-600">Sunjiayi0509@outlook.com</p>
+                    </div>
+                    <div class="text-center p-5 bg-gray-50 rounded-xl">
+                        <i class="fa fa-map-marker text-primary text-2xl mb-2"></i>
+                        <p class="font-medium">Location</p>
+                        <p class="text-sm text-gray-600">Yantai, Shandong, China</p>
+                    </div>
+                    <div class="text-center p-5 bg-gray-50 rounded-xl">
+                        <i class="fa fa-calendar text-primary text-2xl mb-2"></i>
+                        <p class="font-medium">Availability</p>
+                        <p class="text-sm text-gray-600">Available Immediately</p>
+                    </div>
+                </div>
+                <div class="text-center fade-up">
+                    <a href="mailto:Sunjiayi0509@outlook.com" class="inline-block px-8 py-4 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-all">
+                        <i class="fa fa-envelope mr-2"></i> Send Me an Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-10">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Sun Jiayi. Academic Portfolio.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://scholar.google.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://github.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 30) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-md');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-md');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
